@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" style="border-radius: 100%;">
   <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/main/darkpix-logo.png" width="180" style="border-radius: 50%; filter: drop-shadow(0 0 20px #00d4ff);">
 </p>
 
