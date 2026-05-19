@@ -22,3 +22,45 @@ $ cat /proc/skills
 > Fullstack Development | GPU Passthrough | Virtualization | System Architecture
 $ uptime
 > 24/7 since 2019
+```
+
+## Tech Stack
+
+```python
+stack = {
+    "frontend": ["React", "TypeScript", "Tailwind", "Three.js"],
+    "backend": ["Node.js", "Python", "Go", "PostgreSQL", "Redis"],
+    "devops": ["Proxmox", "Docker", "Nginx", "CI/CD"],
+    "systems": ["GPU Passthrough", "VFIO", "IOMMU", "KVM/QEMU"],
+    "hardware": ["NVIDIA GTX 1080", "Custom Workstation Build"]
+}
+```
+
+## Current Projects
+
+| Project | Status | Description |
+|---------|--------|-------------|
+| `gpu-passthrough-lab` | Active | Proxmox + NVIDIA VFIO setup for dual VM gaming/dev |
+| `darkpix-stack` | WIP | Personal fullstack framework |
+| `void-terminal` | Planned | Web-based terminal emulator with WebGL effects |
+
+## GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&bg_color=0d1117&title_color=00d4ff&icon_color=00d4ff&text_color=c9d1d9&border_color=21262d" height="165">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&bg_color=0d1117&title_color=00d4ff&text_color=c9d1d9&border_color=21262d" height="165">
+</p>
+
+## Connect
+
+<p align="center">
+  <a href="https://t.me/v_darkpix">
+    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/main/matrix-rain.gif" width="100%">
+</p>
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
