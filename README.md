@@ -62,3 +62,5 @@ stack = {
 <p align="center">
   <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/main/matrix-rain.gif" width="100%">
 </p>
+
+[![trophy](https://github-profile-trophy.vercel.app/?DARKPIX404=ryo-ma&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
