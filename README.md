@@ -1,25 +1,64 @@
-[![MasterHead](https://img.freepik.com/free-vector/programmer-typographic-header-concept-idea-of-working-on_277904-13.jpg?w=996)](https://ru.freepik.com/premium-vector/programmer-typographic-header-concept-idea-of-working-on_9371517.htm)
-<h1 align="center">Hi 👋, I'm Borodatyi Vladislav</h1>
-<h3 align="center">A javascript developer from Russia</h3>
-<img align="right" alt="Coding" width="300" src="https://media1.tenor.com/m/pA-mSORRQFsAAAAC/error-404-404.gif">
-
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=vladnet14&label=Profile%20views&color=0e75b6&style=flat" alt="Vladnet14" /> </p>
-
-
-- 🔭 I’m currently working on **Luno-s.ru Bot Discord**
-
-- 🌱 I’m currently learning **Typescript**
-
-- 📫 How to reach me **vlad.borodaty228032qw@gmail.com**
-
-- ⚡ Fun fact **I am Funny**
-
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://instagram.com/vladnet14" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Vladnet14" height="30" width="40" /></a>
-<a href="https://vk.com/vladnet14" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/800px-VK.com-logo.svg.png" alt="Vladnet14" height="30" width="30" /></a>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/main/darkpix-logo.png" width="180" style="border-radius: 50%; filter: drop-shadow(0 0 20px #00d4ff);">
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"><a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://kotlinlang.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </a> </p>
+<h1 align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&width=500&lines=DARKPIX404;Fullstack+Developer;GPU+Virtualization;Low-Level+Systems;Cyber+Architect" alt="Typing SVG" />
+</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Proxmox-E57000?style=for-the-badge&logo=proxmox&logoColor=white">
+  <img src="https://img.shields.io/badge/NVIDIA-GTX_1080-76B900?style=for-the-badge&logo=nvidia&logoColor=white">
+  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white">
+  <img src="https://img.shields.io/badge/Windows_11-0078D6?style=for-the-badge&logo=windows&logoColor=white">
+</p>
+
+---
+
+```bash
+$ whoami
+> darkpix404
+$ cat /proc/skills
+> Fullstack Development | GPU Passthrough | Virtualization | System Architecture
+$ uptime
+> 24/7 since 2019
+```
+
+## Tech Stack
+
+```python
+stack = {
+    "frontend": ["React", "TypeScript", "Tailwind", "Three.js"],
+    "backend": ["Node.js", "Python", "Go", "PostgreSQL", "Redis"],
+    "devops": ["Proxmox", "Docker", "Nginx", "CI/CD"],
+    "systems": ["GPU Passthrough", "VFIO", "IOMMU", "KVM/QEMU"],
+    "hardware": ["NVIDIA GTX 1080", "Custom Workstation Build"]
+}
+```
+
+## Current Projects
+
+| Project | Status | Description |
+|---------|--------|-------------|
+| `gpu-passthrough-lab` | Active | Proxmox + NVIDIA VFIO setup for dual VM gaming/dev |
+| `darkpix-stack` | WIP | Personal fullstack framework |
+| `void-terminal` | Planned | Web-based terminal emulator with WebGL effects |
+
+## GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&bg_color=0d1117&title_color=00d4ff&icon_color=00d4ff&text_color=c9d1d9&border_color=21262d" height="165">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&bg_color=0d1117&title_color=00d4ff&text_color=c9d1d9&border_color=21262d" height="165">
+</p>
+
+## Connect
+
+<p align="center">
+  <a href="https://t.me/darkpix404">
+    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/main/matrix-rain.gif" width="100%">
+</p>
