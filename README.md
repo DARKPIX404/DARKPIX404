@@ -54,7 +54,7 @@ stack = {
 ## Connect
 
 <p align="center">
-  <a href="https://t.me/darkpix404">
+  <a href="https://t.me/v_darkpix">
     <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
   </a>
 </p>
@@ -63,4 +63,4 @@ stack = {
   <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/main/matrix-rain.gif" width="100%">
 </p>
 
-[![trophy](https://github-profile-trophy.vercel.app/?DARKPIX404=ryo-ma&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
