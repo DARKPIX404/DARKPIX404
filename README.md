@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,50:00FF41,100:FF00FF&height=250&section=header&text=DARKPIX404&fontSize=70&fontColor=00FF41&animation=twinkling&fontAlignY=35&desc=ROOT%20ACCESS%20GRANTED&descAlignY=60&descSize=18&descColor=FF00FF"/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,50:00FF41,100:FF00FF&height=250&section=header&text=DARKPIX&fontSize=70&fontColor=00FF41&animation=twinkling&fontAlignY=35&desc=ROOT%20ACCESS%20GRANTED&descAlignY=60&descSize=18&descColor=FF00FF"/>
 </div>
 
 <p align="center">
@@ -78,6 +78,10 @@ $ sudo -l
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output/github-contribution-grid-snake.svg" />
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output/github-contribution-grid-snake.svg" />
 </picture>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output-3d/profile-night-rainbow.svg" width="600">
+</p>
 
 ## Connect
 
