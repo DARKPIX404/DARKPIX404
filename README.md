@@ -22,7 +22,7 @@
 
 ---
 
-## 🖥️ System Information
+## System Information
 
 ```bash
 $ whoami
@@ -42,3 +42,66 @@ $ uptime
 
 $ sudo -l
 > (ALL : ALL) NOPASSWD: ALL
+```
+
+## Tech Arsenal
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,typescript,tailwind,threejs,nodejs,python,go,postgres,redis,docker,nginx,git,github,linux,arch,bash,vscode,neovim&theme=dark&perline=9" />
+</p>
+
+## Network Activity
+
+<picture>
+  <source media="(prefers-color-reduced-motion: no-preference)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=DARKPIX404&bg_color=0d1117&color=00FF41&line=FF00FF&point=00FFFF&area=true&area_color=00FF4144&hide_border=true&custom_title=CONTRIBUTION+MATRIX"/>
+  <img alt="Contribution Graph" src="https://github-readme-activity-graph.vercel.app/graph?username=DARKPIX404&bg_color=0d1117&color=00FF41&line=FF00FF&point=00FFFF&area=true&area_color=00FF4144&hide_border=true&custom_title=CONTRIBUTION+MATRIX"/>
+</picture>
+
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&icon_color=FF00FF&text_color=00FFFF&include_all_commits=true&count_private=true&rank_icon=github"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&text_color=00FFFF&langs_count=10"/>
+</div>
+
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=DARKPIX404&theme=radical&hide_border=true&background=0d1117&stroke=FF00FF&ring=00FF41&fire=FF00FF&currStreakNum=00FFFF&sideNums=00FF41&currStreakLabel=FF00FF&sideLabels=00FFFF&dates=888888"/>
+</div>
+
+## Achievement Unlocked
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=DARKPIX404&theme=radical&no-frame=true&no-bg=true&margin-w=15&row=2&column=4" />
+</p>
+
+## Active Operations
+
+| Operation | Status | Target | Priority |
+|-----------|--------|--------|----------|
+| `gpu-passthrough-lab` | ACTIVE | Proxmox + NVIDIA VFIO dual VM | CRITICAL |
+| `darkpix-stack` | IN PROGRESS | Personal fullstack framework | HIGH |
+| `void-terminal` | PLANNED | WebGL terminal emulator | MEDIUM |
+| `wireguard-mesh` | IN PROGRESS | Secure network tunnel | HIGH |
+
+## Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output/github-contribution-grid-snake.svg" />
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output/github-contribution-grid-snake.svg" />
+</picture>
+
+## Connect
+
+<p align="center">
+  <a href="https://darkpix.ru">
+    <img src="https://img.shields.io/badge/Website-darkpix.ru-00FF41?style=for-the-badge&logo=firefox&logoColor=white&labelColor=0d1117"/>
+  </a>
+  <a href="https://t.me/v_darkpix">
+    <img src="https://img.shields.io/badge/Telegram-@v_darkpix-00FFFF?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117"/>
+  </a>
+</p>
+
+---
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF00FF,50:00FFFF,100:00FF41&height=120&section=footer&animation=twinkling"/>
+</div>
