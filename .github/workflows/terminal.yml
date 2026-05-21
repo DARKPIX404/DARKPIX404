@@ -13,15 +13,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install Pillow
         run: pip install Pillow
-      
+
       - name: Generate terminal GIF
         run: |
           mkdir -p assets
@@ -29,16 +29,19 @@ jobs:
           from PIL import Image, ImageDraw, ImageFont
 
           W, H = 900, 520
-          BG = (13, 17, 23)
-          GREEN = (0, 255, 65)
-          PINK = (255, 0, 255)
-          CYAN = (0, 255, 255)
-          GRAY = (136, 136, 136)
-          RED = (255, 95, 86)
-          YELLOW = (255, 189, 46)
-          GREEN_BTN = (39, 201, 63)
-          HEADER_BG = (22, 27, 34)
-          BORDER = (48, 54, 61)
+          BG = (13, 17, 23)           # #0d1117 - темный фон
+          GREEN = (0, 255, 65)        # #00FF41 - Matrix green
+          DARK_GREEN = (0, 180, 45)   # темно-зеленый для теней
+          CYAN = (0, 200, 255)        # #00C8FF - неоновый синий
+          WHITE = (220, 220, 220)     # белый для обычного текста
+          GRAY = (136, 136, 136)      # #888888 - серый
+          RED = (255, 80, 80)         # красный для ошибок/важного
+          YELLOW = (255, 200, 50)     # желтый для предупреждений
+          RED_BTN = (255, 95, 86)     # кнопка закрыть
+          YELLOW_BTN = (255, 189, 46) # кнопка свернуть
+          GREEN_BTN = (39, 201, 63)   # кнопка развернуть
+          HEADER_BG = (22, 27, 34)    # заголовок
+          BORDER = (48, 54, 61)       # рамка
 
           try:
               font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 13)
@@ -52,139 +55,273 @@ jobs:
                       font = ImageFont.load_default()
 
           frames = []
+          cursor_blink = True
 
-          scenes = [
-              ("root@darkpix:~# neofetch", GREEN, 0.8),
-              ("", None, 0.2),
-              ("███████████████████████████████████████████████████████████████████", PINK, 0.1),
-              ("█  ████      ███     ████     █   █    ████     █████    █   █    █", PINK, 0.1),
-              ("█  █   █    █   █    █   █    █  █     █   █      █       █ █     █", PINK, 0.1),
-              ("█  █   █    █████    ████     ███      ████       █        █      █", PINK, 0.1),
-              ("█  █   █    █   █    █  █     █  █     █          █       █ █     █", PINK, 0.1),
-              ("█  ████     █   █    █   █    █   █    █        █████    █   █    █", PINK, 0.1),
-              ("███████████████████████████████████████████████████████████████████", PINK, 0.3),
-              ("", None, 0.2),
-              ("OS: Arch Linux x86_64", CYAN, 0.1),
-              ("Host: Custom Workstation", CYAN, 0.1),
-              ("Kernel: 6.8.0-arch1-1", CYAN, 0.1),
-              ("Uptime: 420 days, 6 hours, 9 mins", CYAN, 0.1),
-              ("Shell: zsh 5.9", CYAN, 0.1),
-              ("DE: i3wm | WM: i3", CYAN, 0.1),
-              ("", None, 0.1),
-              ("CPU: AMD Ryzen 9 7950X (32) @ 5.7GHz", PINK, 0.1),
-              ("GPU: NVIDIA GeForce GTX 4090", PINK, 0.1),
-              ("Memory: 64234MiB / 65536MiB", PINK, 0.1),
-              ("", None, 0.1),
-              ("GPU Passthrough: ACTIVE", GREEN, 0.1),
-              ("VFIO Status: ENABLED", GREEN, 0.1),
-              ("IOMMU Group: 0000:01:00.0", GREEN, 0.3),
-              ("", None, 0.5),
-              ("root@darkpix:~# sudo lspci | grep -i nvidia", GREEN, 0.8),
-              ("01:00.0 VGA compatible controller: NVIDIA Corporation AD102 [GeForce RTX 4090] (rev a1)", CYAN, 0.2),
-              ("01:00.1 Audio device: NVIDIA Corporation AD102 High Definition Audio Controller (rev a1)", CYAN, 0.3),
-              ("", None, 0.5),
-              ("root@darkpix:~# cat /proc/cmdline", GREEN, 0.8),
-              ("BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=dead-beef rw quiet amd_iommu=on iommu=pt", CYAN, 0.2),
-              ("vfio-pci.ids=10de:2684,10de:22ba pcie_acs_override=downstream,multifunction", CYAN, 0.3),
-              ("", None, 0.5),
-              ("root@darkpix:~# docker ps", GREEN, 0.8),
-              ("CONTAINER ID   IMAGE                 STATUS          PORTS                    NAMES", PINK, 0.2),
-              ("deadbeef1234   proxmox-ve:latest   Up 69 days      0.0.0.0:8006->8006/tcp   pve-node-01", CYAN, 0.15),
-              ("cafebabe5678   nginx:alpine        Up 420 hours    0.0.0.0:80->80/tcp       darkpix-proxy", CYAN, 0.15),
-              ("1337d00d9999   wireguard:latest    Up 1337 hours   0.0.0.0:51820->51820/udp vpn-mesh", CYAN, 0.3),
-              ("", None, 0.5),
-              ("root@darkpix:~# nmap -sS -O 192.168.1.1 --top-ports 5", GREEN, 0.8),
-              ("Starting Nmap 7.94 ( https://nmap.org )", GRAY, 0.2),
-              ("Host is up (0.00032s latency).", CYAN, 0.2),
-              ("Not shown: 995 closed tcp ports", GRAY, 0.2),
-              ("", None, 0.1),
-              ("PORT     STATE    SERVICE", PINK, 0.15),
-              ("22/tcp   open     ssh", CYAN, 0.15),
-              ("53/tcp   open     domain", CYAN, 0.15),
-              ("80/tcp   open     http", CYAN, 0.15),
-              ("443/tcp  open     https", CYAN, 0.15),
-              ("", None, 0.1),
-              ("MAC Address: DE:AD:BE:EF:CA:FE (Proxmox Virtual NIC)", GRAY, 0.2),
-              ("Device type: router|firewall", CYAN, 0.2),
-              ("Running: Linux 5.x | OS details: Proxmox VE 8.1", CYAN, 0.2),
-              ("Network Distance: 0 hops", CYAN, 0.3),
-              ("", None, 0.5),
-              ("root@darkpix:~# echo '[GPU-PASSTHROUGH] STATUS: ACTIVE'", GREEN, 0.5),
-              ("[VFIO-DRIVER]    LOADED: YES", GREEN, 0.15),
-              ("[IOMMU]          ENABLED: YES", GREEN, 0.15),
-              ("[PCI-STUB]       BOUND: 0000:01:00.0", GREEN, 0.15),
-              ("[VM-WINDOWS11]   RUNNING: YES (8 vCPU, 32GB RAM, GTX 4090)", GREEN, 0.15),
-              ("[VM-UBUNTU]      RUNNING: YES (4 vCPU, 16GB RAM, VirtIO)", GREEN, 0.15),
-              ("[UPTIME]         420 days, 6 hours, 9 minutes", CYAN, 0.15),
-              ("[TEMP]           GPU: 45°C | CPU: 62°C | PVE: 38°C", CYAN, 0.3),
-              ("", None, 0.5),
-              ("root@darkpix:~# cmatrix -C green -u 3", GREEN, 0.8),
-              ("ｦ ｧ ｨ ｩ ｪ ｫ ｬ ｭ ｮ ｯ ｰ ｱ ｲ ｳ ｴ ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ", GREEN, 0.1),
-              ("ｱ ｲ ｳ ｴ ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ", GREEN, 0.1),
-              ("ｳ ｴ ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ ﾋ ﾌ", GREEN, 0.1),
-              ("ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ ﾋ ﾌ ﾍ ﾎ", GREEN, 0.1),
-              ("ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ ﾋ ﾌ ﾍ ﾎ ﾏ ﾐ", GREEN, 0.3),
-              ("", None, 0.3),
-              ("root@darkpix:~# clear", GREEN, 0.5),
-              ("", None, 0.3),
-              ("root@darkpix:~# echo 'System Secure. Root Access Granted.'", GREEN, 0.8),
-              ("", None, 0.3),
-              ("╔═══════════════════════════════════════════════════════════════════════╗", PINK, 0.1),
-              ("║                                                                       ║", PINK, 0.1),
-              ("║     ███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗             ║", PINK, 0.1),
-              ("║     ██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║             ║", PINK, 0.1),
-              ("║     ███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║             ║", PINK, 0.1),
-              ("║     ╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║             ║", PINK, 0.1),
-              ("║     ███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║             ║", PINK, 0.1),
-              ("║     ╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝             ║", PINK, 0.1),
-              ("║                                                                       ║", PINK, 0.1),
-              ("║              D A R K P I X 4 0 4  -  C Y B E R  A R C H I T E C T    ║", CYAN, 0.1),
-              ("║                                                                       ║", PINK, 0.1),
-              ("╚═══════════════════════════════════════════════════════════════════════╝", PINK, 0.1),
-              ("", None, 3.0),
-          ]
+          def draw_frame(visible_lines, current_typing_line="", cursor_x=0, cursor_y=0, typing_color=GREEN):
+              """Рисует кадр с текущим состоянием терминала"""
+              global cursor_blink
 
-          current_lines = []
-          cursor_visible = True
-
-          for text, color, delay in scenes:
-              if text:
-                  current_lines.append((text, color))
-              
               img = Image.new('RGB', (W, H), BG)
               draw = ImageDraw.Draw(img)
-              
+
+              # Рамка терминала
               draw.rectangle([8, 8, W-8, H-8], outline=BORDER, width=2)
               draw.rectangle([8, 8, W-8, 42], fill=HEADER_BG)
-              draw.ellipse([20, 18, 32, 30], fill=RED)
-              draw.ellipse([40, 18, 52, 30], fill=YELLOW)
+              draw.ellipse([20, 18, 32, 30], fill=RED_BTN)
+              draw.ellipse([40, 18, 52, 30], fill=YELLOW_BTN)
               draw.ellipse([60, 18, 72, 30], fill=GREEN_BTN)
               draw.text((380, 16), "darkpix@arch: ~", fill=GRAY, font=font)
-              
+
+              # Выводим уже напечатанные строки
               y = 55
-              visible_lines = current_lines[-18:] if len(current_lines) > 18 else current_lines
-              for line, col in visible_lines:
-                  if line:
-                      draw.text((20, y), line, fill=col or GREEN, font=font)
+              for line_data in visible_lines[-17:]:
+                  text = line_data.get("text", "")
+                  color = line_data.get("color", GREEN)
+                  if text:
+                      draw.text((20, y), text, fill=color, font=font)
                   y += 24
-              
-              if visible_lines:
-                  last_y = 55 + (len(visible_lines) - 1) * 24
-                  if cursor_visible:
-                      draw.rectangle([20, last_y + 22, 32, last_y + 36], fill=GREEN)
-              
-              cursor_visible = not cursor_visible
-              
-              frame_count = max(1, int(delay * 10))
-              for _ in range(frame_count):
-                  frames.append(img.copy())
-          
+
+              # Рисуем текущую строку с эффектом печати
+              if current_typing_line:
+                  # Рисуем уже напечатанную часть
+                  draw.text((20, y), current_typing_line, fill=typing_color, font=font)
+
+                  # Мигающий курсор в конце
+                  if cursor_blink:
+                      bbox = draw.textbbox((20, y), current_typing_line, font=font)
+                      cursor_pos = bbox[2] if current_typing_line else 20
+                      draw.rectangle([cursor_pos, y + 18, cursor_pos + 10, y + 32], fill=typing_color)
+              else:
+                  # Курсор на пустой строке
+                  if cursor_blink:
+                      draw.rectangle([20, y + 18, 30, y + 32], fill=typing_color)
+
+              cursor_blink = not cursor_blink
+              return img
+
+          # ===== СЦЕНАРИЙ ТЕРМИНАЛА =====
+          # Каждая сцена: (prompt, строки_вывода, цвета, скорость_печати)
+
+          scenes = [
+              # Сцена 1: neofetch
+              {
+                  "prompt": "root@darkpix:~# neofetch",
+                  "output": [
+                      "█████████████████████████████████████████████████████████████",
+                      "█  ███      ███     ████     █   █    ███     ████    █   █ █",
+                      "█  █  █    █   █    █   █    █  █     █  █      █      █ █   █",
+                      "█  █  █    █████    ████     ███      ████       █       █   █",
+                      "█  █  █    █   █    █  █     █  █     █         █      █ █   █",
+                      "█  ███     █   █    █   █    █   █    █       ████    █   █ █",
+                      "█████████████████████████████████████████████████████████████",
+                      "",
+                      "OS: Arch Linux x86_64",
+                      "Host: Custom Workstation",
+                      "Kernel: 6.8.0-arch1-1",
+                      "Uptime: 420 days, 6 hours, 9 mins",
+                      "Shell: zsh 5.9",
+                      "DE: i3wm | WM: i3",
+                      "",
+                      "CPU: AMD Ryzen 9 7950X (32) @ 5.7GHz",
+                      "GPU: NVIDIA GeForce GTX 4090",
+                      "Memory: 64234MiB / 65536MiB",
+                      "",
+                      "GPU Passthrough: ACTIVE",
+                      "VFIO Status: ENABLED",
+                      "IOMMU Group: 0000:01:00.0",
+                  ],
+                  "colors": [GREEN, GREEN, GREEN, GREEN, GREEN, GREEN, GREEN, None, 
+                            CYAN, CYAN, CYAN, CYAN, CYAN, CYAN, None,
+                            WHITE, WHITE, WHITE, None,
+                            GREEN, GREEN, GREEN],
+                  "type_speed": 0.03,
+                  "delay_after": 1.5,
+              },
+              # Сцена 2: lspci
+              {
+                  "prompt": "root@darkpix:~# sudo lspci | grep -i nvidia",
+                  "output": [
+                      "01:00.0 VGA compatible controller: NVIDIA Corporation AD102 [GeForce RTX 4090] (rev a1)",
+                      "01:00.1 Audio device: NVIDIA Corporation AD102 High Definition Audio Controller (rev a1)",
+                  ],
+                  "colors": [WHITE, WHITE],
+                  "type_speed": 0.02,
+                  "delay_after": 1.0,
+              },
+              # Сцена 3: cmdline
+              {
+                  "prompt": "root@darkpix:~# cat /proc/cmdline",
+                  "output": [
+                      "BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=dead-beef rw quiet amd_iommu=on iommu=pt",
+                      "vfio-pci.ids=10de:2684,10de:22ba pcie_acs_override=downstream,multifunction",
+                  ],
+                  "colors": [WHITE, WHITE],
+                  "type_speed": 0.02,
+                  "delay_after": 1.0,
+              },
+              # Сцена 4: docker ps
+              {
+                  "prompt": "root@darkpix:~# docker ps",
+                  "output": [
+                      "CONTAINER ID   IMAGE                 STATUS          PORTS                    NAMES",
+                      "deadbeef1234   proxmox-ve:latest   Up 69 days      0.0.0.0:8006->8006/tcp   pve-node-01",
+                      "cafebabe5678   nginx:alpine        Up 420 hours    0.0.0.0:80->80/tcp       darkpix-proxy",
+                      "1337d00d9999   wireguard:latest    Up 1337 hours   0.0.0.0:51820->51820/udp vpn-mesh",
+                  ],
+                  "colors": [CYAN, WHITE, WHITE, WHITE],
+                  "type_speed": 0.02,
+                  "delay_after": 1.0,
+              },
+              # Сцена 5: nmap
+              {
+                  "prompt": "root@darkpix:~# nmap -sS -O 192.168.1.1 --top-ports 5",
+                  "output": [
+                      "Starting Nmap 7.94 ( https://nmap.org )",
+                      "Host is up (0.00032s latency).",
+                      "Not shown: 995 closed tcp ports",
+                      "",
+                      "PORT     STATE    SERVICE",
+                      "22/tcp   open     ssh",
+                      "53/tcp   open     domain",
+                      "80/tcp   open     http",
+                      "443/tcp  open     https",
+                      "",
+                      "MAC Address: DE:AD:BE:EF:CA:FE (Proxmox Virtual NIC)",
+                      "Device type: router|firewall",
+                      "Running: Linux 5.x | OS details: Proxmox VE 8.1",
+                      "Network Distance: 0 hops",
+                  ],
+                  "colors": [GRAY, WHITE, GRAY, None, CYAN, GREEN, GREEN, GREEN, GREEN, None,
+                            GRAY, WHITE, WHITE, WHITE],
+                  "type_speed": 0.02,
+                  "delay_after": 1.5,
+              },
+              # Сцена 6: GPU Status
+              {
+                  "prompt": "root@darkpix:~# echo '[GPU-PASSTHROUGH] STATUS: ACTIVE'",
+                  "output": [
+                      "[VFIO-DRIVER]    LOADED: YES",
+                      "[IOMMU]          ENABLED: YES",
+                      "[PCI-STUB]       BOUND: 0000:01:00.0",
+                      "[VM-WINDOWS11]   RUNNING: YES (8 vCPU, 32GB RAM, GTX 4090)",
+                      "[VM-UBUNTU]      RUNNING: YES (4 vCPU, 16GB RAM, VirtIO)",
+                      "[UPTIME]         420 days, 6 hours, 9 minutes",
+                      "[TEMP]           GPU: 45C | CPU: 62C | PVE: 38C",
+                  ],
+                  "colors": [GREEN, GREEN, GREEN, GREEN, GREEN, CYAN, CYAN],
+                  "type_speed": 0.02,
+                  "delay_after": 1.0,
+              },
+              # Сцена 7: cmatrix (ASCII версия)
+              {
+                  "prompt": "root@darkpix:~# cmatrix -C green -u 3",
+                  "output": [
+                      "0 1 0 1 1 0 1 0 0 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1",
+                      "1 0 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1 1 0",
+                      "0 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0",
+                      "1 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 1 0 1 0 1 1 0 1",
+                      "0 1 1 0 1 0 1 1 0 1 0 1 0 1 1 0 1 0 1 0 1 1 0 1 0",
+                      "1 0 1 0 1 1 0 1 0 1 0 1 1 0 1 0 1 0 1 1 0 1 0 1 1",
+                      "0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 1 0 1",
+                      "1 0 1 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0",
+                  ],
+                  "colors": [DARK_GREEN, GREEN, DARK_GREEN, GREEN, DARK_GREEN, GREEN, DARK_GREEN, GREEN],
+                  "type_speed": 0.01,
+                  "delay_after": 1.0,
+              },
+              # Сцена 8: clear + финальный арт
+              {
+                  "prompt": "root@darkpix:~# clear",
+                  "output": [],
+                  "colors": [],
+                  "type_speed": 0.03,
+                  "delay_after": 0.5,
+                  "clear_screen": True,
+              },
+              # Сцена 9: финал
+              {
+                  "prompt": "root@darkpix:~# echo 'System Secure. Root Access Granted.'",
+                  "output": [
+                      "",
+                      "+-------------------------------------------------------------+",
+                      "|                                                             |",
+                      "|   SYSTEM    ACCESS    GRANTED                               |",
+                      "|                                                             |",
+                      "|   DARKPIX404  -  CYBER ARCHITECT                            |",
+                      "|                                                             |",
+                      "|   [GPU] PASSTHROUGH ACTIVE                                  |",
+                      "|   [VFIO] ENABLED                                            |",
+                      "|   [IOMMU] ENABLED                                           |",
+                      "|   [PROXMOX] CLUSTER ONLINE                                  |",
+                      "|                                                             |",
+                      "+-------------------------------------------------------------+",
+                  ],
+                  "colors": [None, CYAN, None, GREEN, None, WHITE, None, GREEN, GREEN, GREEN, GREEN, None, CYAN],
+                  "type_speed": 0.02,
+                  "delay_after": 3.0,
+              },
+          ]
+
+          # ===== ГЕНЕРАЦИЯ КАДРОВ =====
+          visible_lines = []
+
+          for scene in scenes:
+              prompt = scene["prompt"]
+              output_lines = scene["output"]
+              colors = scene["colors"] if len(scene["colors"]) == len(output_lines) else [GREEN] * len(output_lines)
+              type_speed = scene.get("type_speed", 0.03)
+              delay_after = scene.get("delay_after", 1.0)
+              clear_screen = scene.get("clear_screen", False)
+
+              # 1. Печатаем prompt посимвольно
+              typed_prompt = ""
+              for i, char in enumerate(prompt):
+                  typed_prompt += char
+                  frames.append(draw_frame(visible_lines, typed_prompt, typing_color=GREEN))
+
+              # Enter
+              frames.append(draw_frame(visible_lines, typed_prompt, typing_color=GREEN))
+
+              # Добавляем prompt в видимые строки
+              visible_lines.append({"text": prompt, "color": GREEN})
+
+              # 2. Если clear - очищаем экран
+              if clear_screen:
+                  visible_lines = []
+                  for _ in range(5):
+                      frames.append(draw_frame(visible_lines))
+                  continue
+
+              # 3. Печатаем output посимвольно
+              for line_idx, (line_text, line_color) in enumerate(zip(output_lines, colors)):
+                  if not line_text:
+                      visible_lines.append({"text": "", "color": line_color})
+                      for _ in range(3):
+                          frames.append(draw_frame(visible_lines))
+                      continue
+
+                  typed_line = ""
+                  for char in line_text:
+                      typed_line += char
+                      frames.append(draw_frame(visible_lines, typed_line, typing_color=line_color or GREEN))
+
+                  # Enter
+                  frames.append(draw_frame(visible_lines, typed_line, typing_color=line_color or GREEN))
+
+                  # Добавляем в видимые строки
+                  visible_lines.append({"text": line_text, "color": line_color or GREEN})
+
+              # 4. Пауза после сцены
+              for _ in range(int(delay_after * 10)):
+                  frames.append(draw_frame(visible_lines))
+
+          # ===== СОХРАНЕНИЕ GIF =====
           if frames:
               frames[0].save(
                   'assets/terminal.gif',
                   save_all=True,
                   append_images=frames[1:],
-                  duration=100,
+                  duration=80,
                   loop=0,
                   optimize=False
               )
@@ -192,7 +329,7 @@ jobs:
           else:
               print("No frames generated!")
           PYEOF
-      
+
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
