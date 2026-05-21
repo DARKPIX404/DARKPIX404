@@ -1,0 +1,160 @@
+name: Generate Terminal GIF
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install github-readme-terminal
+      
+      - name: Generate terminal GIF
+        run: |
+          mkdir -p assets
+          cat > terminal_config.yml << 'EOF'
+          user: darkpix404
+          host: darkpix
+          shell: zsh
+          palette:
+            background: "#0d1117"
+            foreground: "#00FF41"
+            accent: "#FF00FF"
+            secondary: "#00FFFF"
+            error: "#FF0000"
+            warning: "#FFFF00"
+          commands:
+            - text: "neofetch"
+              output: |
+                ██████╗  █████╗ ██████╗ ██╗  ██╗██████╗ ██╗██╗  ██╗
+                ██╔══██╗██╔══██╗██╔══██╗██║ ██╔╝██╔══██╗██║╚██╗██╔╝
+                ██║  ██║███████║██████╔╝█████╔╝ ██████╔╝██║ ╚███╔╝ 
+                ██║  ██║██╔══██║██╔══██╗██╔═██╗ ██╔═══╝ ██║ ██╔██╗ 
+                ██████╔╝██║  ██║██║  ██║██║  ██╗██║     ██║██╔╝ ██╗
+                ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+                
+                OS: Arch Linux x86_64
+                Host: Custom Workstation
+                Kernel: 6.8.0-arch1-1
+                Uptime: 420 days, 6 hours, 9 mins
+                Packages: 1337 (pacman)
+                Shell: zsh 5.9
+                Resolution: 3840x2160
+                DE: i3wm
+                WM: i3
+                Theme: Neon-Dark
+                Icons: Papirus-Dark
+                Terminal: alacritty
+                CPU: AMD Ryzen 9 7950X (32) @ 5.7GHz
+                GPU: NVIDIA GeForce GTX 4090
+                Memory: 64234MiB / 65536MiB
+                GPU Passthrough: ACTIVE
+                VFIO Status: ENABLED
+                IOMMU Group: 0000:01:00.0
+              delay: 2.0
+            
+            - text: "sudo lspci | grep -i nvidia"
+              output: |
+                01:00.0 VGA compatible controller: NVIDIA Corporation AD102 [GeForce RTX 4090] (rev a1)
+                01:00.1 Audio device: NVIDIA Corporation AD102 High Definition Audio Controller (rev a1)
+              delay: 1.5
+            
+            - text: "cat /proc/cmdline"
+              output: |
+                BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=dead-beef-cafe-babe rw quiet amd_iommu=on iommu=pt vfio-pci.ids=10de:2684,10de:22ba pcie_acs_override=downstream,multifunction
+              delay: 1.0
+            
+            - text: "ls -la /dev/vfio/"
+              output: |
+                total 0
+                drwxr-xr-x  2 root root     60 May 21 20:00 .
+                drwxr-xr-x 18 root root   4140 May 21 20:00 ..
+                crw-------  1 root root 10, 196 May 21 20:00 0
+                crw-rw-rw-  1 root root 10, 195 May 21 20:00 vfio
+              delay: 1.5
+            
+            - text: "docker ps"
+              output: |
+                CONTAINER ID   IMAGE                    COMMAND                  STATUS          PORTS                    NAMES
+                deadbeef1234   proxmox-ve:latest        "/usr/sbin/init"         Up 69 days      0.0.0.0:8006->8006/tcp   pve-node-01
+                cafebabe5678   nginx:alpine             "/docker-entrypoint.…"   Up 420 hours    0.0.0.0:80->80/tcp       darkpix-proxy
+                1337d00d9999   wireguard:latest         "/entrypoint.sh"         Up 1337 hours   0.0.0.0:51820->51820/udp  vpn-mesh
+              delay: 2.0
+            
+            - text: "nmap -sS -O 192.168.1.0/24 --top-ports 10"
+              output: |
+                Starting Nmap 7.94 ( https://nmap.org )
+                Nmap scan report for router.local (192.168.1.1)
+                Host is up (0.00032s latency).
+                Not shown: 990 closed tcp ports
+                PORT     STATE    SERVICE
+                22/tcp   open     ssh
+                53/tcp   open     domain
+                80/tcp   open     http
+                443/tcp  open     https
+                MAC Address: DE:AD:BE:EF:CA:FE (Proxmox Virtual NIC)
+                Device type: router|firewall
+                Running: Linux 5.x
+                OS details: Proxmox VE 8.1
+                Network Distance: 0 hops
+              delay: 3.0
+            
+            - text: "echo 'GPU Passthrough Lab Status'"
+              output: |
+                [GPU-PASSTHROUGH] STATUS: ACTIVE
+                [VFIO-DRIVER]    LOADED: YES
+                [IOMMU]          ENABLED: YES
+                [PCI-STUB]       BOUND: 0000:01:00.0
+                [VM-WINDOWS11]   RUNNING: YES (8 vCPU, 32GB RAM, GTX 4090)
+                [VM-UBUNTU]      RUNNING: YES (4 vCPU, 16GB RAM, VirtIO)
+                [UPTIME]         420 days, 6 hours, 9 minutes
+                [TEMP]           GPU: 45°C | CPU: 62°C | PVE: 38°C
+              delay: 2.5
+            
+            - text: "cmatrix -C green -u 3"
+              output: |
+                ｦ ｧ ｨ ｩ ｪ ｫ ｬ ｭ ｮ ｯ ｰ ｱ ｲ ｳ ｴ ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ
+                ｱ ｲ ｳ ｴ ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ ﾋ ﾌ ﾍ ﾎ ﾏ ﾐ ﾑ ﾒ ﾓ ﾔ ﾕ
+                ｳ ｴ ｵ ｶ ｷ ｸ ｹ ｺ ｻ ｼ ｽ ｾ ｿ ﾀ ﾁ ﾂ ﾃ ﾄ ﾅ ﾆ ﾇ ﾈ ﾉ ﾊ ﾋ ﾌ ﾍ ﾎ ﾏ ﾐ ﾑ ﾒ ﾓ ﾔ ﾕ ﾖ
+              delay: 2.0
+              type: "matrix"
+            
+            - text: "clear"
+              output: ""
+              delay: 0.5
+            
+            - text: "echo 'System Secure. Root Access Granted.'"
+              output: |
+                
+                ╔═══════════════════════════════════════════════════════════════╗
+                ║  ███████╗██╗   ██╗███████╗████████╗███████╗███╗   ███╗        ║
+                ║  ██╔════╝╚██╗ ██╔╝██╔════╝╚══██╔══╝██╔════╝████╗ ████║        ║
+                ║  ███████╗ ╚████╔╝ ███████╗   ██║   █████╗  ██╔████╔██║        ║
+                ║  ╚════██║  ╚██╔╝  ╚════██║   ██║   ██╔══╝  ██║╚██╔╝██║        ║
+                ║  ███████║   ██║   ███████║   ██║   ███████╗██║ ╚═╝ ██║        ║
+                ║  ╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝        ║
+                ║                                                               ║
+                ║         D A R K P I X 4 0 4  -  C Y B E R  A R C H I T E C T  ║
+                ╚═══════════════════════════════════════════════════════════════╝
+              delay: 3.0
+          EOF
+          github-readme-terminal --config terminal_config.yml --output assets/terminal.gif
+      
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add assets/terminal.gif
+          git diff --cached --quiet || git commit -m "Update terminal animation"
+          git push
