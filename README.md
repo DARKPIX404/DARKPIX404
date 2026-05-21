@@ -53,7 +53,7 @@ $ sudo -l
 ## Terminal Session
 
 <p align="center">
-  <img src="./assets/terminal.gif" width="800" alt="Hacker Terminal">
+  <img src="./assets/terminal.gif" width="900" alt="Hacker Terminal">
 </p>
 
 ## Network Activity
