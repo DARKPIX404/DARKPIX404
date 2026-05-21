@@ -79,8 +79,10 @@ $ sudo -l
   <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output/github-contribution-grid-snake.svg" />
 </picture>
 
+## 3D Contribution Graph
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DARKPIX404/DARKPIX404/output-3d/profile-night-rainbow.svg" width="600">
+  <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="700">
 </p>
 
 ## Connect
