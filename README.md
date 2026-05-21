@@ -96,6 +96,12 @@ $ sudo -l
   </a>
 </p>
 
+## Discord Status
+
+<p align="center">
+  <img src="https://lanyard.cnrad.dev/api/662566746221314069" />
+</p>
+
 ---
 
 <div align="center">
