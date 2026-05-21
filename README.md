@@ -103,7 +103,6 @@ $ sudo -l
   <a href="https://discord.gg/xBvRgsJEZV">
     <img src="https://img.shields.io/badge/Discord-Family-00FFFF?style=for-the-badge&logo=discord&logoColor=blue&labelColor=0d1117"/>
   </a>
-  https://img.shields.io/discord/:serverId
 </p>
 
 ---
