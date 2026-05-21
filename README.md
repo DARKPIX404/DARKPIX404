@@ -50,6 +50,12 @@ $ sudo -l
   <img src="https://skillicons.dev/icons?i=react,typescript,tailwind,threejs,nodejs,python,go,postgres,redis,docker,nginx,git,github,linux,arch,bash,vscode,neovim&theme=dark&perline=9" />
 </p>
 
+## Terminal Session
+
+<p align="center">
+  <img src="./assets/terminal.gif" width="800" alt="Hacker Terminal">
+</p>
+
 ## Network Activity
 
 <p align="center">
