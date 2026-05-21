@@ -57,8 +57,8 @@ $ sudo -l
 </p>
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&icon_color=FF00FF&text_color=00FFFF&include_all_commits=true&count_private=true&rank_icon=github"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&text_color=00FFFF&langs_count=8&hide=html,css"/>
+  <img height="180em" src="github-readme-stats-vlad228032s-projects.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&icon_color=FF00FF&text_color=00FFFF&include_all_commits=true&count_private=true&rank_icon=github"/>
+  <img height="180em" src="github-readme-stats-vlad228032s-projects.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&text_color=00FFFF&langs_count=8&hide=html,css"/>
 </div>
 
 <div align="center">
