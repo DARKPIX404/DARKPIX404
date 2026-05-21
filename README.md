@@ -56,11 +56,6 @@ $ sudo -l
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=DARKPIX404&bg_color=0d1117&color=00FF41&line=FF00FF&point=00FFFF&area=true&area_color=00FF4144&hide_border=true&custom_title=CONTRIBUTION+MATRIX"/>
 </p>
 
-<div align="center">
-  <img height="180em" src="https://github-readme-stats-vlad228032s-projects.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&icon_color=FF00FF&text_color=00FFFF&rank_icon=github"/>
-  <img height="180em" src="https://github-readme-stats-vlad228032s-projects.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=00FF41&text_color=00FFFF&langs_count=8&hide=html,css"/>
-</div>
-
 ## Achievement Unlocked
 
 <p align="center">
