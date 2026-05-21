@@ -44,13 +44,6 @@ stack = {
 | `darkpix-stack` | WIP | Personal fullstack framework |
 | `void-terminal` | Planned | Web-based terminal emulator with WebGL effects |
 
-## GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=DARKPIX404&show_icons=true&theme=radical&bg_color=0d1117&title_color=00d4ff&icon_color=00d4ff&text_color=c9d1d9&border_color=21262d" height="165">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DARKPIX404&layout=compact&theme=radical&bg_color=0d1117&title_color=00d4ff&text_color=c9d1d9&border_color=21262d" height="165">
-</p>
-
 ## Connect
 
 <p align="center">
