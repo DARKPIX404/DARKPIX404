@@ -85,6 +85,12 @@ $ sudo -l
   <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="700">
 </p>
 
+## Discord Status
+
+<p align="center">
+  <img src="https://lanyard.cnrad.dev/api/662566746221314069" />
+</p>
+
 ## Connect
 
 <p align="center">
@@ -94,12 +100,10 @@ $ sudo -l
   <a href="https://t.me/v_darkpix">
     <img src="https://img.shields.io/badge/Telegram-@v_darkpix-00FFFF?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0d1117"/>
   </a>
-</p>
-
-## Discord Status
-
-<p align="center">
-  <img src="https://lanyard.cnrad.dev/api/662566746221314069" />
+  <a href="https://discord.gg/xBvRgsJEZV">
+    <img src="https://img.shields.io/badge/Discord-Family-00FFFF?style=for-the-badge&logo=discord&logoColor=blue&labelColor=0d1117"/>
+  </a>
+  https://img.shields.io/discord/:serverId
 </p>
 
 ---
