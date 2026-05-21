@@ -88,7 +88,7 @@ $ sudo -l
 ## Discord Status
 
 <p align="center">
-  <img src="https://lanyard.cnrad.dev/api/662566746221314069" />
+  <img src="https://lanyard.cnrad.dev/api/662566746221314069?theme=dark&bg=0d1117&animated=true&hideDiscrim=false&borderRadius=15px&idleMessage=I'm%20resting." />
 </p>
 
 ## Connect
