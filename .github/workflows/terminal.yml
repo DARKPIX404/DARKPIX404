@@ -321,7 +321,7 @@ jobs:
                   'assets/terminal.gif',
                   save_all=True,
                   append_images=frames[1:],
-                  duration=80,
+                  duration=150,
                   loop=0,
                   optimize=False
               )
