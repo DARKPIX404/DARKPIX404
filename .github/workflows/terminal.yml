@@ -145,8 +145,8 @@ jobs:
                       "01:00.1 Audio device: NVIDIA Corporation AD102 High Definition Audio Controller (rev a1)",
                   ],
                   "colors": [WHITE, WHITE],
-                  "type_speed": 0.02,
-                  "delay_after": 1.0,
+                  "type_speed": 0.5,
+                  "delay_after": 0.1,
               },
               # Сцена 3: cmdline
               {
