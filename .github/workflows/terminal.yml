@@ -134,7 +134,7 @@ jobs:
                             CYAN, CYAN, CYAN, CYAN, CYAN, CYAN, None,
                             WHITE, WHITE, WHITE, None,
                             GREEN, GREEN, GREEN],
-                  "type_speed": 0.03,
+                  "type_speed": 0.30,
                   "delay_after": 1.5,
               },
               # Сцена 2: lspci
